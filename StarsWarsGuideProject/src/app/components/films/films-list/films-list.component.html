@@ -1,1 +1,24 @@
-<p>films-list works!</p>
+<body>
+  <header>
+    <div>
+      <div class="title yellow">star</div>
+      <div class="title yellow">wars</div>
+    </div>
+  </header>
+  <div class="flex justify-content-space-between aling-items padding" >
+    <div class="white" style="font-size: 24pt;">
+      <a routerLink="/initial-page" style="text-decoration: none; color: #81D4FA"><span>Home</span></a><span> / Characters</span>
+    </div>
+    <div>
+      <span *ngFor="let in of counter(); let i = index"><button (click)="getFilmsPage(i+1)">{{i+1}}</button>&nbsp;</span>
+    </div>
+  </div>
+  <div class="flex justify-content-center" style="background-color: black;">
+    <mat-card class="example-card" *ngFor="let films of filmsList">
+      <mat-card-header>
+        <h2>{{films.title}}</h2>
+      </mat-card-header>
+      <img mat-card-image [src]="showImages(films)">
+    </mat-card>
+  </div>
+</body>
