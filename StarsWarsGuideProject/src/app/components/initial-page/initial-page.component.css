@@ -1,0 +1,112 @@
+@font-face {
+  font-family: "starjhol";
+  src: url('../../fonts/Starjhol.ttf');
+}
+
+@font-face {
+  font-family: "starjedi";
+  src: url('../../fonts/Starjedi.ttf');
+}
+
+body {
+  background-color: black;
+}
+
+* {
+  box-sizing: inherit;
+}
+
+header {
+  height: 200px;
+  text-align: center;
+}
+
+.title {
+  font-family: "starjhol", sans-serif;
+  font-size: 4em;
+}
+
+.yellow {
+  color: #FFEE58 !important;
+}
+
+.view-container {
+  min-height: calc(100vh - 300px);
+  display: block;
+  background-color: black;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.category {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-right: 2.35765%;
+  width: 28%;
+}
+
+.category:nth-child(3n + 1) {
+  clear: left;
+}
+
+.card {
+  border-radius: 2px;
+  background-color: #FFF;
+  overflow: hidden;
+  box-shadow: 0 3px 1px -2px rgb(0 0 0 / 14%), 0 2px 2px 0 rgb(0 0 0 / 10%), 0 1px 5px 0 rgb(0 0 0 / 8%);
+}
+
+.card__img--top {
+  position: relative;
+}
+
+.category-image {
+  width: 100%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  font-style: italic;
+}
+
+.card__img--top span {
+  position: absolute;
+  right: 16px;
+  bottom: 16px;
+  left: 16px;
+  text-align: center;
+}
+
+.jedi-font {
+  font-family: "starjedi", sans-serif;
+}
+
+.category-title {
+  margin-left: -16px;
+  margin-right: -16px;
+  padding-left: 1em;
+  background-color: rgba(0,0,0,.4);
+  font-size: 1.2em;
+}
+
+.display-block {
+  display: block;
+}
+
+.red {
+  color: #E53935!important;
+}
+
+.white {
+  color: #FFF!important;
+}
+
+.blue {
+  color: #039BE5!important;
+}
