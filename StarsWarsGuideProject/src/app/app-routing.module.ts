@@ -6,13 +6,17 @@ import { PeopleListComponent } from './components/people/people-list/people-list
 import { SpeciesInformationComponent } from './components/species/species-information/species-information.component';
 import { SpeciesListComponent } from './components/species/species-list/species-list.component';
 import { StarshipsListComponent } from './components/starships/starships-list/starships-list.component';
+import { VehiclesInformationComponent } from './components/vehicles/vehicles-information/vehicles-information.component';
+import { VehiclesListComponent } from './components/vehicles/vehicles-list/vehicles-list.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/initial-page', pathMatch: 'full'},
   {path: 'initial-page', component: InitialPageComponent},
   {path: 'people-list', component: PeopleListComponent},
   {path: 'species-list', component: SpeciesListComponent},
-  { path: 'species-info/id', component: SpeciesInformationComponent},
+  {path: 'species-info/id', component: SpeciesInformationComponent},
+  {path: 'vehicles-list', component: VehiclesListComponent},
+  {path: 'vehicless-info/id', component: VehiclesInformationComponent},
   {path: 'films-list', component: FilmsListComponent},
   {path: 'starships-list', component: StarshipsListComponent}
 ];

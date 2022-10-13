@@ -43,7 +43,7 @@ export class SpeciesListComponent implements OnInit {
     return 'https://starwars-visualguide.com/assets/img/species/'+id+'.jpg'
   }
 
-  getspeciesInfo(species: Species) {
+  getSpeciesInfo(species: Species) {
     this.speciesService.getSpecie(species).subscribe(response => {
       this.speciesSelected = response;
       
