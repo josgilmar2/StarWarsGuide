@@ -18,6 +18,7 @@ import { VehiclesInformationComponent } from './components/vehicles/vehicles-inf
 import { PlanetsListComponent } from './components/planets/planets-list/planets-list.component';
 import { PlanetsInformationComponent } from './components/planets/planets-information/planets-information.component';
 import { InitialPageComponent } from './components/initial-page/initial-page.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { InitialPageComponent } from './components/initial-page/initial-page.com
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MaterialImportsModule
   ],
