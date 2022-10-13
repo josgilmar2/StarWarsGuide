@@ -1,0 +1,59 @@
+@font-face {
+    font-family: "starjhol";
+    src: url('../../../fonts/Starjhol.ttf');
+  }
+  
+  body {
+    background-color: black;
+  }
+  
+  * {
+    box-sizing: inherit;
+  }
+  
+  header {
+    height: 200px;
+    text-align: center;
+  }
+  
+  .yellow {
+    color: #FFEE58 !important;
+  }
+  
+  .title {
+    font-family: "starjhol", sans-serif;
+    font-size: 4em;
+  }
+  
+  .flex {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .padding {
+    padding: 20px;
+  }
+  
+  .justify-content-space-between {
+    justify-content: space-between;
+  }
+  
+  .justify-content-center {
+    justify-content: center;
+  }
+  
+  .align-items {
+    align-items: center;
+  }
+  
+  .white {
+    color: #FFF!important;
+  }
+  
+  .example-card {
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 15%;
+  }
+  

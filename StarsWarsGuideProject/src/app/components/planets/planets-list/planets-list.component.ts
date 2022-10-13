@@ -1,15 +1,58 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { Planets, PlanetsResponse } from 'src/app/interfaces/planets.interface';
+import { PlanetsService } from 'src/app/services/planets.service';
+import { PlanetsInformationComponent } from '../planets-information/planets-information.component';
 
 @Component({
-  selector: 'app-planets-list',
+  selector: 'planets-list',
   templateUrl: './planets-list.component.html',
   styleUrls: ['./planets-list.component.css']
 })
 export class PlanetsListComponent implements OnInit {
+  planetsList: Planets[]=[]
+  numPages=0;
+  planetsSelected: PlanetsResponse | undefined;
 
-  constructor() { }
+  constructor(
+    private planetsService: PlanetsService,
+    public dialog: MatDialog
+    ) { }
 
   ngOnInit(): void {
+    this.getPlanetsPage(1)
   }
 
+  getPlanetsPage(page:number){
+    this.planetsService.getPlanetsListPg(page).subscribe(resp =>{
+      this.planetsList = resp.results;
+      this.numPages =Math.ceil(resp.count/10)
+    })
+  }
+
+  counter(){
+    return new Array(this.numPages)
+  }
+  modificarUrlImgSpc(planet: Planets){
+    
+    
+    let array=planet.url.split('/')
+      array=array.reverse()
+      let id=array[1]
+  
+    return 'https://starwars-visualguide.com/assets/img/planets/'+id+'.jpg'
+  }
+
+  getPlanetsInfo(planets: Planets) {
+    this.planetsService.getPlanet(planets).subscribe(response => {
+      this.planetsSelected = response;
+      
+      this.dialog.open(PlanetsInformationComponent, {
+        data: {
+          planetsInfo: this.planetsSelected,
+          color: '#FF0000'
+        },
+      });
+    });
+  }
 }
