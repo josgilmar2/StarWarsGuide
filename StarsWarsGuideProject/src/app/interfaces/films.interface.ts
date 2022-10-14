@@ -23,3 +23,9 @@ export interface Films {
   edited:        string;
   url:           string;
 }
+
+export interface DialogData {
+  filmsInfo: Films;
+  background: string;
+  color: string;
+}
