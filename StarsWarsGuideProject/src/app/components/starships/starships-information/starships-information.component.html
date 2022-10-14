@@ -1,1 +1,21 @@
-<p>starships-information works!</p>
+<div [style.background]="'url('+data.background+')'"  [style.color]="data.color" style="padding: 20px">
+  <h1 mat-dialog-title>{{data.starshipsInfo.name}}</h1>
+  <mat-dialog-content>
+    <ul style="list-style: circle;">
+      <li>Modelo: {{data.starshipsInfo.model}}</li>
+      <li>Manufactura: {{data.starshipsInfo.manufacturer}}</li>
+      <li>Clase: {{data.starshipsInfo.starship_class}}</li>
+      <li>Precio: {{data.starshipsInfo.cost_in_credits}}</li>
+      <li>Velocidad: {{data.starshipsInfo.max_atmosphering_speed}}</li>
+      <li>Nota de Hyperdrive: {{data.starshipsInfo.hyperdrive_rating}}</li>
+      <li>MGLT: {{data.starshipsInfo.MGLT}}</li>
+      <li>Largo: {{data.starshipsInfo.length}}</li>
+      <li>Capacidad del Cargo: {{data.starshipsInfo.cargo_capacity}}</li>
+      <li>Crew mínima: {{data.starshipsInfo.crew}}</li>
+      <li>Pasajeros: {{data.starshipsInfo.passengers}}</li>
+    </ul>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-raised-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>
+</div>

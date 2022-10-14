@@ -19,6 +19,9 @@
         <h2>{{starships.name}}</h2>
       </mat-card-header>
       <img mat-card-image [src]="showImages(starships)" onerror="this.src='https://starwars-visualguide.com/assets/img/placeholder.jpg'">
+      <mat-card-actions>
+        <button mat-button (click)="getStarshipsInfo(starships)">+ INFO</button>
+      </mat-card-actions>
     </mat-card>
   </div>
 </body>

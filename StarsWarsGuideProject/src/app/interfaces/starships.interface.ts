@@ -27,3 +27,9 @@ export interface Starships {
   edited:                 string;
   url:                    string;
 }
+
+export interface DialogData {
+  starshipsInfo: Starships;
+  background: string;
+  color: string;
+}
