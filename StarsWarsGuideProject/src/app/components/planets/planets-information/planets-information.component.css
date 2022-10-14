@@ -1,0 +1,29 @@
+
+mat-card{
+    margin: 10%;
+    padding: 10%;
+    background-color: rgba(255, 255, 255, 0.4);
+    
+}
+
+mat-card-title{
+    font-family: 'starjhol';
+    font-size: 250%;
+  }
+  mat-card-content{
+    font-family: 'starjedi';
+  }
+
+.flex{
+    display: flex;
+}
+mat-icon{
+    float: right;
+    margin-left: 10px ;
+    margin-bottom: 10px ;
+    margin-top: 0px;
+}
+.background{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}

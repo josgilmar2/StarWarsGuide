@@ -23,6 +23,8 @@ export interface PlanetsResponse {
 }
 export interface DialogData {
     planetsInfo: Planets;
+    url: string;
     color: string;
+    urlImg: string
   }
   
