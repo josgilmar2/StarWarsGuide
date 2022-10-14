@@ -31,6 +31,8 @@ export enum Designation {
 }
 export interface DialogData {
     speciesInfo: Species;
+    url: string;
     color: string;
+    urlImg: string
   }
   
