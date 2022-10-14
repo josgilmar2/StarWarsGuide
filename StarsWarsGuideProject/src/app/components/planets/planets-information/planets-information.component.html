@@ -1,1 +1,11 @@
-<p>planets-information works!</p>
+<h1 mat-dialog-title >{{data.planetsInfo.name}}</h1>
+<div mat-dialog-content [style.background]="data.color">
+  <ul>
+    <li>Name: {{data.planetsInfo.name}}</li>
+    <li>Diameter: {{data.planetsInfo.diameter}}</li>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, iure repellendus laudantium nisi atque et unde laboriosam libero distinctio pariatur porro eaque inventore doloribus quaerat nemo error in nulla maxime.</p>
+  </ul>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>
+>

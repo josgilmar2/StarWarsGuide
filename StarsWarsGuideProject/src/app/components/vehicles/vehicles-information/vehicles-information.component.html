@@ -1,1 +1,11 @@
-<p>vehicles-information works!</p>
+<h1 mat-dialog-title >{{data.vehiclesInfo.name}}</h1>
+<div mat-dialog-content [style.background]="data.color">
+  <ul>
+    <li>Model: {{data.vehiclesInfo.model}}</li>
+    <li>Length: {{data.vehiclesInfo.length}}</li>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, iure repellendus laudantium nisi atque et unde laboriosam libero distinctio pariatur porro eaque inventore doloribus quaerat nemo error in nulla maxime.</p>
+  </ul>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+</div>
+
