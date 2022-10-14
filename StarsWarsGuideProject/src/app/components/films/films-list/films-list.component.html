@@ -19,6 +19,9 @@
         <h2>{{films.title}}</h2>
       </mat-card-header>
       <img mat-card-image [src]="showImages(films)">
+      <mat-card-actions>
+        <button mat-button (click)="getFilmsInfo(films)">+ INFO</button>
+      </mat-card-actions>
     </mat-card>
   </div>
 </body>

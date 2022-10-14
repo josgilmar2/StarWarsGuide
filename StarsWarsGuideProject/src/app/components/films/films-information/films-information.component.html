@@ -1,1 +1,14 @@
-<p>films-information works!</p>
+<div [style.background]="'url('+data.background+')'"  [style.color]="data.color" style="padding: 20px">
+  <h1 mat-dialog-title>{{data.filmsInfo.title}}</h1>
+  <mat-dialog-content>
+    <ul style="list-style: circle;">
+      <li>Fecha de creación: {{data.filmsInfo.created}}</li>
+      <li>Director: {{data.filmsInfo.director}}</li>
+      <li>Productore(s): {{data.filmsInfo.producer}}</li>
+      <li>Sinopsis: {{data.filmsInfo.opening_crawl}}</li>
+    </ul>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-raised-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>
+</div>

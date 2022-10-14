@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Films } from 'src/app/interfaces/films.interface';
+import { MatDialog } from '@angular/material/dialog';
+import { Films, FilmsResponse } from 'src/app/interfaces/films.interface';
 import { FilmsService } from 'src/app/services/films.service';
+import { FilmsInformationComponent } from '../films-information/films-information.component';
 
 @Component({
   selector: 'app-films-list',
@@ -11,8 +13,9 @@ export class FilmsListComponent implements OnInit {
 
   filmsList: Films[] = [];
   numPages = 0;
+  filmsSelected: FilmsResponse | undefined;
 
-  constructor(private filmsService: FilmsService) { }
+  constructor(private filmsService: FilmsService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getFilmsPage(1);
@@ -33,6 +36,20 @@ export class FilmsListComponent implements OnInit {
 
   counter() {
     return new Array(this.numPages);
+  }
+
+  getFilmsInfo(f: Films) {
+    this.filmsService.getFilmsId(f).subscribe(response => {
+      this.filmsSelected = response;
+      this.dialog.open(FilmsInformationComponent, {
+        width: '80%',
+        data: {
+          filmsInfo: this.filmsSelected,
+          background: 'https://srunners.com/wp-content/uploads/2020/04/fondos-de-star-wars-min-1024x576.jpg',
+          color: '#FFF'
+        }
+      })
+    });
   }
 
 }
