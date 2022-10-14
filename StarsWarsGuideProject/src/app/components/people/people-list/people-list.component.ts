@@ -41,9 +41,11 @@ export class PeopleListComponent implements OnInit {
     this.peopleService.getPeopleId(p).subscribe(response => {
       this.peopleSelected = response;
       this.dialog.open(PeopleInformationComponent, {
+        width: '80%',
         data: {
           peopleInfo: this.peopleSelected,
-          background: 'https://srunners.com/wp-content/uploads/2020/04/fondos-de-star-wars-min-1024x576.jpg'
+          background: 'https://srunners.com/wp-content/uploads/2020/04/fondos-de-star-wars-min-1024x576.jpg',
+          color: '#FFF'
         }
       })
     });

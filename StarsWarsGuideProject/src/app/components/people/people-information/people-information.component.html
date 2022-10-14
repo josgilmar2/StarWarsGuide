@@ -1,10 +1,26 @@
-<h1 mat-dialog-title >{{data.peopleInfo.name}}</h1>
-<div mat-dialog-content [style.background]="data.background">
-  <ul>
-    <li>Fecha de nacimiento: {{data.peopleInfo.birth_year}}</li>
-    <li>Especie: {{data.peopleInfo.eye_color}}</li>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, iure repellendus laudantium nisi atque et unde laboriosam libero distinctio pariatur porro eaque inventore doloribus quaerat nemo error in nulla maxime.</p>
-  </ul>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
+<div [style.background]="'url('+data.background+')'"  [style.color]="data.color" style="padding: 20px">
+  <h1 mat-dialog-title>{{data.peopleInfo.name}}</h1>
+  <mat-dialog-content>
+    <ul style="list-style: circle;">
+      <li>Fecha de nacimiento: {{data.peopleInfo.birth_year}}</li>
+      <li>Especie:
+        <span *ngFor="let species of speciesList">
+          <span *ngIf="showSpecieOfPeople(data.peopleInfo, species)">{{species.name}}</span>
+        </span>
+      </li>
+      <li>Altura: {{data.peopleInfo.height}}</li>
+      <li>Peso: {{data.peopleInfo.mass}}</li>
+      <li>Género: {{data.peopleInfo.gender}}</li>
+      <li>Color de pelo: {{data.peopleInfo.hair_color}}</li>
+      <li>Color de piel: {{data.peopleInfo.skin_color}}</li>
+      <li>Planeta de procedencia:
+        <span *ngFor="let planets of planetsList">
+          <span *ngIf="checkHomeworld(data.peopleInfo, planets)">{{planets.name}}</span>
+        </span>
+      </li>
+    </ul>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-raised-button mat-dialog-close>Close</button>
+  </mat-dialog-actions>
 </div>

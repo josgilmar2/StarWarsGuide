@@ -35,4 +35,5 @@ export enum Gender {
 export interface DialogData {
   peopleInfo: People;
   background: string;
+  color: string;
 }
