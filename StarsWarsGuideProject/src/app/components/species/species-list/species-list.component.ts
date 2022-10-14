@@ -48,9 +48,12 @@ export class SpeciesListComponent implements OnInit {
       this.speciesSelected = response;
       
       this.dialog.open(SpeciesInformationComponent, {
+       width:'50%',
         data: {
           speciesInfo: this.speciesSelected,
-          color: '#FF0000'
+          url: 'https://i.pinimg.com/736x/de/fa/dc/defadc1400875bad29f74179352c606c--star-wars-backgrounds-desktop-backgrounds.jpg',
+          color: '#FFFFFF',
+          urlImg: 'https://starwars-visualguide.com/assets/img/species/'
         },
       });
     });

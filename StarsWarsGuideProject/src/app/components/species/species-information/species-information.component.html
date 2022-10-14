@@ -1,10 +1,38 @@
-<h1 mat-dialog-title >{{data.speciesInfo.name}}</h1>
-<div mat-dialog-content [style.background]="data.color">
-  <ul>
-    <li>average_height: {{data.speciesInfo.average_height}}</li>
-    <li>average_lifespan: {{data.speciesInfo.average_lifespan}}</li>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, iure repellendus laudantium nisi atque et unde laboriosam libero distinctio pariatur porro eaque inventore doloribus quaerat nemo error in nulla maxime.</p>
-  </ul>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
+
+
+  <mat-icon mat-dialog-close aria-hidden="false" aria-label="Close" fontIcon="close"></mat-icon>
+
+<div class="background" mat-dialog-content [style.background]="'url('+data.url+')'"  [style.color]="data.color">
+
+
+<mat-card  >
+  <mat-card-title-group>
+    <mat-card-title mat-dialog-title >{{data.speciesInfo.name}}</mat-card-title>
+    
+    <mat-card-subtitle>     
+      
+     
+    </mat-card-subtitle>
+  </mat-card-title-group>
+  <div class="flex">
+    <img mat-card-xl-image [src]="data.urlImg+data.speciesInfo.url.split('/').reverse()[1]+'.jpg'" >
+    <mat-card-content >
+      <ul>
+        <li>Classification: {{data.speciesInfo.classification}}</li>
+        <li>Designation: {{data.speciesInfo.designation}}</li>
+        <li>Language: {{data.speciesInfo.language}}</li>
+        <li>Average lifespan: {{data.speciesInfo.average_lifespan}}</li>
+        <li>Average height: {{data.speciesInfo.average_height}}</li>
+        <li>Hair Colors: {{data.speciesInfo.hair_colors}}</li>
+        <li>Skin Colors: {{data.speciesInfo.skin_colors}}</li>
+        <li>Eye Colors: {{data.speciesInfo.eye_colors}} </li>
+        
+        
+      </ul>
+    </mat-card-content>
+    
+  </div>
+  
+</mat-card>
+
 </div>
