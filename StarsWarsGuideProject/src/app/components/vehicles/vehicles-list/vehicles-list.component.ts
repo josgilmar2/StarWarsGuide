@@ -48,9 +48,12 @@ export class VehiclesListComponent implements OnInit {
       this.vehiclesSelected = response;
       
       this.dialog.open(VehiclesInformationComponent, {
+        width:'50%',
         data: {
           vehiclesInfo: this.vehiclesSelected,
-          color: '#FF0000'
+          url: 'https://i.pinimg.com/736x/de/fa/dc/defadc1400875bad29f74179352c606c--star-wars-backgrounds-desktop-backgrounds.jpg',
+          color: '#FFFFFF',
+          urlImg: 'https://starwars-visualguide.com/assets/img/vehicles/'
         },
       });
     });

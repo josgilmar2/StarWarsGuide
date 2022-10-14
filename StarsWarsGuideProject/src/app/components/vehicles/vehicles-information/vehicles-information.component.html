@@ -1,11 +1,37 @@
-<h1 mat-dialog-title >{{data.vehiclesInfo.name}}</h1>
-<div mat-dialog-content [style.background]="data.color">
-  <ul>
-    <li>Model: {{data.vehiclesInfo.model}}</li>
-    <li>Length: {{data.vehiclesInfo.length}}</li>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, iure repellendus laudantium nisi atque et unde laboriosam libero distinctio pariatur porro eaque inventore doloribus quaerat nemo error in nulla maxime.</p>
-  </ul>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
-</div>
+<mat-icon mat-dialog-close aria-hidden="false" aria-label="Close" fontIcon="close"></mat-icon>
 
+<div class="background" mat-dialog-content [style.background]="'url('+data.url+')'"  [style.color]="data.color">
+
+
+<mat-card  >
+  <mat-card-title-group>
+    <mat-card-title mat-dialog-title >{{data.vehiclesInfo.name}}</mat-card-title>
+    
+    <mat-card-subtitle>     
+      
+     
+    </mat-card-subtitle>
+  </mat-card-title-group>
+  <div class="flex">
+    <img mat-card-xl-image [src]="data.urlImg+data.vehiclesInfo.url.split('/').reverse()[1]+'.jpg'" >
+    <mat-card-content >
+      <ul>
+        <li>Model: {{data.vehiclesInfo.model}}</li>
+        <li>Manufacturer: {{data.vehiclesInfo.manufacturer}}</li>
+        <li>Class: {{data.vehiclesInfo.vehicle_class}}</li>
+        <li>Cost: {{data.vehiclesInfo.cost_in_credits}}</li>
+        <li>Speed: {{data.vehiclesInfo.max_atmosphering_speed}}</li>
+        <li>Length: {{data.vehiclesInfo.length}}</li>
+        <li>Cargo Capacity: {{data.vehiclesInfo.cargo_capacity}}</li>
+        <li>Mimimum Crew: {{data.vehiclesInfo.crew}} </li>
+        <li>Passengers: {{data.vehiclesInfo.passengers}} </li>
+        
+        
+      </ul>
+    </mat-card-content>
+    
+  </div>
+  
+</mat-card>
+
+</div>
