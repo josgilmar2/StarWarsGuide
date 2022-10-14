@@ -25,6 +25,8 @@ export interface VehiclesResponse {
 }
 
 export interface DialogData {
-    vehiclesInfo: Vehicles;
+    vehiclesInfo: Vehicles;    
     color: string;
+    url: string;
+    urlImg: string;
   }
