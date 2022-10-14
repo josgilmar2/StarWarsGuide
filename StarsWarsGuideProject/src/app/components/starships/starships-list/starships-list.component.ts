@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Starships } from 'src/app/interfaces/starships.interface';
+import { MatDialog } from '@angular/material/dialog';
+import { Starships, StarshipsResponse } from 'src/app/interfaces/starships.interface';
 import { StarshipsService } from 'src/app/services/starships.service';
+import { StarshipsInformationComponent } from '../starships-information/starships-information.component';
 
 @Component({
   selector: 'app-starships-list',
@@ -12,8 +14,9 @@ export class StarshipsListComponent implements OnInit {
   starshipsList: Starships[] = [];
   numPages = 0;
   image = true;
+  starshipsSelected: StarshipsResponse | undefined;
 
-  constructor(private starshipsService: StarshipsService) { }
+  constructor(private starshipsService: StarshipsService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getStarshipsPage(1)
@@ -39,6 +42,19 @@ export class StarshipsListComponent implements OnInit {
 
   counter() {
     return new Array(this.numPages);
+  }
+
+  getStarshipsInfo(s: Starships) {
+    this.starshipsService.getStarshipsId(s).subscribe(response =>
+      this.starshipsSelected = response);
+    this.dialog.open(StarshipsInformationComponent, {
+      width: '80%',
+      data: {
+        starshipsInfo: this.starshipsSelected,
+        background: 'https://srunners.com/wp-content/uploads/2020/04/fondos-de-star-wars-min-1024x576.jpg',
+        color: '#FFF'
+      }
+    })
   }
 
 }
