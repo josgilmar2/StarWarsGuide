@@ -1,11 +1,38 @@
-<h1 mat-dialog-title >{{data.planetsInfo.name}}</h1>
-<div mat-dialog-content [style.background]="data.color">
-  <ul>
-    <li>Name: {{data.planetsInfo.name}}</li>
-    <li>Diameter: {{data.planetsInfo.diameter}}</li>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae, iure repellendus laudantium nisi atque et unde laboriosam libero distinctio pariatur porro eaque inventore doloribus quaerat nemo error in nulla maxime.</p>
-  </ul>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close>Close</button>
-</div>
->
+
+
+  <mat-icon mat-dialog-close aria-hidden="false" aria-label="Close" fontIcon="close"></mat-icon>
+
+  <div class="background" mat-dialog-content [style.background]="'url('+data.url+')'"  [style.color]="data.color">
+  
+  
+  <mat-card  >
+    <mat-card-title-group>
+      <mat-card-title mat-dialog-title >{{data.planetsInfo.name}}</mat-card-title>
+      
+      <mat-card-subtitle>     
+        
+       
+      </mat-card-subtitle>
+    </mat-card-title-group>
+    <div class="flex">
+      <img mat-card-xl-image [src]="data.urlImg+data.planetsInfo.url.split('/').reverse()[1]+'.jpg'" >
+      <mat-card-content >
+        <ul>
+          <li>Population: {{data.planetsInfo.population}}</li>
+          <li>Rotation Period: {{data.planetsInfo.rotation_period}} Days</li>
+          <li>Orbital Period: {{data.planetsInfo.orbital_period}} Days</li>
+          <li>Diameter: {{data.planetsInfo.diameter}} Km</li>
+          <li>Gravity: {{data.planetsInfo.gravity}}</li>
+          <li>Terrain: Grasslands: {{data.planetsInfo.terrain}}</li>
+          <li>Surface Water: {{data.planetsInfo.surface_water}}/100</li>
+          <li>Climate: {{data.planetsInfo.climate}} </li>
+          
+          
+        </ul>
+      </mat-card-content>
+      
+    </div>
+    
+  </mat-card>
+  
+  </div>
