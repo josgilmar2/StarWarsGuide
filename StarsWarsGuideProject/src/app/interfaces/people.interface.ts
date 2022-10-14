@@ -31,3 +31,8 @@ export enum Gender {
   Male = "male",
   NA = "n/a",
 }
+
+export interface DialogData {
+  peopleInfo: People;
+  background: string;
+}

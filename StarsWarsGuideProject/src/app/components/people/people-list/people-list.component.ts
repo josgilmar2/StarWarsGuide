@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { People } from 'src/app/interfaces/people.interface';
+import { MatDialog } from '@angular/material/dialog';
+import { People, PeopleResponse } from 'src/app/interfaces/people.interface';
 import { PeopleService } from 'src/app/services/people.service';
+import { PeopleInformationComponent } from '../people-information/people-information.component';
 
 @Component({
   selector: 'app-people-list',
@@ -11,8 +13,9 @@ export class PeopleListComponent implements OnInit {
 
   peopleList: People[] = [];
   numPages = 0;
+  peopleSelected: PeopleResponse | undefined;
 
-  constructor(private peopleService: PeopleService) { }
+  constructor(private peopleService: PeopleService, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.getPeoplePage(1);
@@ -32,5 +35,17 @@ export class PeopleListComponent implements OnInit {
 
   counter() {
     return new Array(this.numPages);
+  }
+
+  getPeopleInfo(p: People) {
+    this.peopleService.getPeopleId(p).subscribe(response => {
+      this.peopleSelected = response;
+      this.dialog.open(PeopleInformationComponent, {
+        data: {
+          peopleInfo: this.peopleSelected,
+          background: 'https://srunners.com/wp-content/uploads/2020/04/fondos-de-star-wars-min-1024x576.jpg'
+        }
+      })
+    });
   }
 }

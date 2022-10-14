@@ -19,6 +19,9 @@
         <h2>{{people.name}}</h2>
       </mat-card-header>
       <img mat-card-image [src]="showImages(people)">
+      <mat-card-actions>
+        <button mat-button (click)="getPeopleInfo(people)">+ INFO</button>
+      </mat-card-actions>
     </mat-card>
   </div>
 </body>
