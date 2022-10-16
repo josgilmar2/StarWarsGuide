@@ -45,16 +45,17 @@ export class StarshipsListComponent implements OnInit {
   }
 
   getStarshipsInfo(s: Starships) {
-    this.starshipsService.getStarshipsId(s).subscribe(response =>
-      this.starshipsSelected = response);
+    this.starshipsService.getStarshipsId(s).subscribe(response => {
+      this.starshipsSelected = response;
     this.dialog.open(StarshipsInformationComponent, {
       width: '80%',
       data: {
         starshipsInfo: this.starshipsSelected,
         background: 'https://srunners.com/wp-content/uploads/2020/04/fondos-de-star-wars-min-1024x576.jpg',
         color: '#FFF'
-      }
-    })
+        }
+      })
+    });
   }
 
 }

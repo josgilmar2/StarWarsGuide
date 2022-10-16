@@ -15,7 +15,7 @@
       </mat-card-subtitle>
     </mat-card-title-group>
     <div class="flex">
-      <img mat-card-xl-image [src]="data.urlImg+data.planetsInfo.url.split('/').reverse()[1]+'.jpg'" >
+      <img mat-card-xl-image [src]="data.urlImg+data.planetsInfo.url.split('/').reverse()[1]+'.jpg'" onerror="this.src='https://starwars-visualguide.com/assets/img/placeholder.jpg'">
       <mat-card-content >
         <ul>
           <li>Population: {{data.planetsInfo.population}}</li>

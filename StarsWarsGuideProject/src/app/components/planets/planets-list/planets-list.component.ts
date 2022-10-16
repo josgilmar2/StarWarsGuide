@@ -48,7 +48,7 @@ export class PlanetsListComponent implements OnInit {
       this.planetsSelected = response;
       
       this.dialog.open(PlanetsInformationComponent, {
-        width: '50%',
+        width: '75%',
         data: {
           planetsInfo: this.planetsSelected,
           url: 'https://i.pinimg.com/736x/de/fa/dc/defadc1400875bad29f74179352c606c--star-wars-backgrounds-desktop-backgrounds.jpg',
