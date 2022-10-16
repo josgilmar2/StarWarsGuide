@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
 import { FilmsListComponent } from './components/films/films-list/films-list.component';
 import { InitialPageComponent } from './components/initial-page/initial-page.component';
 import { PeopleListComponent } from './components/people/people-list/people-list.component';
@@ -22,7 +23,8 @@ const routes: Routes = [
   {path: 'planets-list', component: PlanetsListComponent},
   {path: 'planets-info/id', component: PlanetsInformationComponent},
   {path: 'films-list', component: FilmsListComponent},
-  {path: 'starships-list', component: StarshipsListComponent}
+  {path: 'starships-list', component: StarshipsListComponent},
+  {path: '**', component: ErrorPageComponent}
 ];
 
 @NgModule({

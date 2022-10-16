@@ -19,6 +19,7 @@ import { PlanetsListComponent } from './components/planets/planets-list/planets-
 import { PlanetsInformationComponent } from './components/planets/planets-information/planets-information.component';
 import { InitialPageComponent } from './components/initial-page/initial-page.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ErrorPageComponent } from './components/error-page/error-page.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HttpClientModule } from '@angular/common/http';
     VehiclesInformationComponent,
     PlanetsListComponent,
     PlanetsInformationComponent,
-    InitialPageComponent
+    InitialPageComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
