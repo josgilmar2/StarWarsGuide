@@ -48,7 +48,7 @@ export class SpeciesListComponent implements OnInit {
       this.speciesSelected = response;
       
       this.dialog.open(SpeciesInformationComponent, {
-       width:'50%',
+       width:'75%',
         data: {
           speciesInfo: this.speciesSelected,
           url: 'https://i.pinimg.com/736x/de/fa/dc/defadc1400875bad29f74179352c606c--star-wars-backgrounds-desktop-backgrounds.jpg',

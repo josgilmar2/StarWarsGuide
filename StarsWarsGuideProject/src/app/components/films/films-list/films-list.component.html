@@ -7,7 +7,7 @@
   </header>
   <div class="flex justify-content-space-between aling-items padding" >
     <div class="white" style="font-size: 24pt;">
-      <a routerLink="/initial-page" style="text-decoration: none; color: #81D4FA"><span>Home</span></a><span> / Characters</span>
+      <a routerLink="/initial-page" style="text-decoration: none; color: #81D4FA"><span>Home</span></a><span> / Films</span>
     </div>
     <div>
       <span *ngFor="let in of counter(); let i = index"><button (click)="getFilmsPage(i+1)">{{i+1}}</button>&nbsp;</span>
